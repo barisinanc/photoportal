@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="veritabani" Class="veriDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\veritabani.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="veritabaniConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.album" Member="albums">
+    <Type Name="album">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ad" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="tarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="kul_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="album_fotograf" Member="fotografs" ThisKey="id" OtherKey="album_id" Type="fotograf" />
+      <Association Name="kullanici_album" Member="kullanici" ThisKey="kul_id" OtherKey="id" Type="kullanici" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.kullanici" Member="kullanicis">
+    <Type Name="kullanici">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="kadi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ad" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="soyad" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="eposta" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sifre" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="kullanici_album" Member="albums" ThisKey="id" OtherKey="kul_id" Type="album" />
+      <Association Name="kullanici_fotograf" Member="fotografs" ThisKey="id" OtherKey="kul_id" Type="fotograf" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fotograf" Member="fotografs">
+    <Type Name="fotograf">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dosya" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="album_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="kul_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ad" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="album_fotograf" Member="album" ThisKey="album_id" OtherKey="id" Type="album" IsForeignKey="true" />
+      <Association Name="kullanici_fotograf" Member="kullanici" ThisKey="kul_id" OtherKey="id" Type="kullanici" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

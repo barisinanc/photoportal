@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="veri">
+  <DataContextMoniker Name="/veriDataContext" />
+  <nestedChildShapes>
+    <classShape Id="39dbc9aa-dc07-4e37-a686-9bbd4732b7f2" absoluteBounds="3.5, 1.125, 2, 1.4248478189110756">
+      <DataClassMoniker Name="/veriDataContext/album" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6b84ea1f-ba1f-460f-88f1-a170ca047836" absoluteBounds="3.5150000005960464, 1.5850000008940697, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e2145163-051a-4944-8ed0-a01cca5b1f9f" absoluteBounds="0.75, 0.875, 2, 1.7535424809902906">
+      <DataClassMoniker Name="/veriDataContext/kullanici" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7583cbbc-0455-4415-88ac-9720c3f8233e" absoluteBounds="0.76500000059604645, 1.3350000008940697, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.83742390945554); (3.5 : 1.83742390945554)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/veriDataContext/kullanici/kullanici_album" />
+      <nodes>
+        <classShapeMoniker Id="e2145163-051a-4944-8ed0-a01cca5b1f9f" />
+        <classShapeMoniker Id="39dbc9aa-dc07-4e37-a686-9bbd4732b7f2" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0f9b8a68-6ec2-41c1-9ae1-4ab358bea575" absoluteBounds="6.375, 1.625, 2, 1.75354248046875">
+      <DataClassMoniker Name="/veriDataContext/fotograf" />
+      <nestedChildShapes>
+        <elementListCompartment Id="56101d2e-3e6f-4631-be67-cda2733afcea" absoluteBounds="6.39, 2.085, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 2.08742390945554); (6.375 : 2.08742390945554)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/veriDataContext/album/album_fotograf" />
+      <nodes>
+        <classShapeMoniker Id="39dbc9aa-dc07-4e37-a686-9bbd4732b7f2" />
+        <classShapeMoniker Id="0f9b8a68-6ec2-41c1-9ae1-4ab358bea575" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 0.96875); (7.375 : 0.96875); (7.375 : 1.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/veriDataContext/kullanici/kullanici_fotograf" />
+      <nodes>
+        <classShapeMoniker Id="e2145163-051a-4944-8ed0-a01cca5b1f9f" />
+        <classShapeMoniker Id="0f9b8a68-6ec2-41c1-9ae1-4ab358bea575" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
